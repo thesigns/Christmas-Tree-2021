@@ -28,7 +28,7 @@ for (let trunk = height * 0.2; trunk < height * 0.9; trunk += height / 40) {
   for (let i = Math.PI * 0.2; i < Math.PI * 0.8; i += Math.PI / (2 * trunk)) {
     let x1 = centerX;
     let y1 = trunk * 0.5;
-    let radius = (trunk * trunk) / 330; + Math.random() * 2;
+    let radius = (trunk * trunk) / 340 + Math.random() * 3;
     let x2 = Math.cos(i) * radius + x1;
     let y2 = Math.sin(i) * radius + y1;
     let line = createLine(x1, y1, x2, y2, "needles");
