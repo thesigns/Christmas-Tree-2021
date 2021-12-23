@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="styles.css" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 70 100">
+  <title>Merry Christmas</title>
+  <script xlink:href="main.js" />
+  <text x="35" y="78">Merry Christmas and a Happy New Year!</text>
+  <text x="35" y="85">2022</text>
+</svg>

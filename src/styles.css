@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+
+svg {
+  background-color: rgb(20, 21, 102);
+  background-color: rgb(255, 255, 255);
+  background: radial-gradient(rgb(7, 22, 97), rgb(20, 3, 43));
+}
+
+text {
+  font-family: "Mea Culpa";
+  font-size: 3pt;
+  text-anchor: middle;
+  fill: rgb(236, 202, 7);
+  user-select: none;
+}
+
+text:last-of-type {
+  font-size: 5pt;
+}
+
+polyline.trunk {
+  stroke-width: 2;
+  stroke: hsla(60, 80%, 40%, 1);
+}
+
+polyline.needles {
+  stroke-dasharray: 3 1;
+  animation: strokes 2s infinite linear;
+}
+
+@keyframes strokes {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: 4;
+  }
+}
