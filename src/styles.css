@@ -24,7 +24,7 @@ polyline.trunk {
 }
 
 polyline.needles {
-  stroke-dasharray: 2 2;
+  stroke-dasharray: 0.2 3.8;
   animation: strokes 2s infinite linear reverse;
 }
 
