@@ -16,34 +16,26 @@ let createLine = (x1, y1, x2, y2, classname) => {
   return line;
 };
 
-let trunk = 88;
-for (let i = Math.PI * 0.49; i < Math.PI * 0.51; i += Math.PI / (30 * trunk)) {
-  let x1 = centerX;
-  let y1 = trunk * 0.5 - Math.random() * 5;
-  let radius = (trunk * trunk) / 350 + Math.random() * 7;
-  let x2 = Math.cos(i) * radius + x1;
-  let y2 = Math.sin(i) * radius + y1;
-  let line = createLine(x1, y1, x2, y2, "needles");
-  line.style.strokeWidth = Math.random() * 0.25;
-  line.style.stroke = `hsla(${Math.random() * 20 + 100 - trunk / 2}, 100%, ${
-    Math.random() * 40 + 20
-  }%, 1)`;
-  line.style.animationDelay = Math.random() * 2 + "s";
-}
-
-
-for (let trunk = height * 0.2; trunk < height * 0.9; trunk += height / 40) {
-  for (let i = Math.PI * 0.2; i < Math.PI * 0.8; i += Math.PI / (2 * trunk)) {
-    let x1 = centerX;
-    let y1 = trunk * 0.5;
-    let radius = (trunk * trunk) / 340 + Math.random() * 3;
-    let x2 = Math.cos(i) * radius + x1;
-    let y2 = Math.sin(i) * radius + y1;
-    let line = createLine(x1, y1, x2, y2, "needles");
+let createLines = (x, y, angle, angleWidth, number, radiusMin, radiusMax) => {
+  for (let i = 0; i < number; i++) {
+    let min = angle - angleWidth / 2;
+    let max = angle + angleWidth / 2;
+    let angleDeg = Math.random() * (max - min + 1) + min;
+    let angleRad = angleDeg * Math.PI / 180;
+    let radius = Math.random() * (radiusMax - radiusMin + 1) + radiusMax;
+    let x2 = Math.sin(angleRad) * radius + x;
+    let y2 = Math.cos(angleRad) * radius + y;
+    let line = createLine(x, y, x2, y2, "needles");
     line.style.strokeWidth = Math.random() * 0.2;
-    line.style.stroke = `hsla(${Math.random() * 20 + 80 - trunk / 2}, 100%, ${
-      Math.random() * 60 + 20
-    }%, 1)`;
-    line.style.animationDelay = Math.random() * 1 + "s";
+    line.style.stroke = `hsl(${Math.random() * 20 + 40}, 100%, ${Math.random() * 80 + 20}%)`;
+    line.style.animationDelay = Math.random() * 4 + "s";
   }
 }
+
+for (let i = 0; i < 30; i += 3) {
+  createLines(35, 10 + i, 0, 2 + i * i * 0.3, 10 * i, 1, 3);
+  createLines(35, 15 + i, 0, 2 + i * i * 0.2, 10 * i, 5, 8);
+  createLines(35, 15 + i, 0, 2 + i * i * 0.12, 10 * i, 10, 15);
+  createLines(35, 18 + i, 0, 4, 10 * i, 10, 15);
+}
+createLines(35, 15, 0, 360, 100, 1, 3);

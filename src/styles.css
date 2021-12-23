@@ -24,6 +24,8 @@ polyline.trunk {
 }
 
 polyline.needles {
+  stroke-width: 2;
+  stroke: hsla(60, 80%, 40%, 1);
   stroke-dasharray: 0.2 3.8;
   animation: strokes 2s infinite linear reverse;
 }
