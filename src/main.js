@@ -33,9 +33,9 @@ let createLines = (x, y, angle, angleWidth, number, radiusMin, radiusMax) => {
 }
 
 for (let i = 0; i < 30; i += 3) {
-  createLines(35, 10 + i, 0, 2 + i * i * 0.3, 10 * i, 1, 3);
-  createLines(35, 15 + i, 0, 2 + i * i * 0.2, 10 * i, 5, 8);
-  createLines(35, 15 + i, 0, 2 + i * i * 0.12, 10 * i, 10, 15);
-  createLines(35, 18 + i, 0, 4, 10 * i, 10, 15);
+  createLines(35, 10 + i, 0, 2 + i * i * 0.45, 5 * i, 1, 3);
+  createLines(35, 15 + i, 0, 2 + i * i * 0.35, 5 * i, 5, 8);
+  createLines(35, 15 + i, 0, 2 + i * i * 0.18, 5 * i, 10, 15);
+  createLines(35, 18 + i, 0, 4, 4 * i, 10, 15);
 }
-createLines(35, 15, 0, 360, 100, 1, 3);
+createLines(35, 15, 0, 360, 250, 1, 2);
